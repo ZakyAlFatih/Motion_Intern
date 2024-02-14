@@ -1,5 +1,8 @@
 import 'package:deep_dive_get_cli/app/shared/widgets/image_story.dart';
 import 'package:deep_dive_get_cli/app/shared/widgets/post_widget.dart';
+import 'package:deep_dive_get_cli/app/shared/widgets/bottom_navbar.dart';
+import 'package:deep_dive_get_cli/app/shared/widgets/header.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -18,6 +21,10 @@ class HomeView extends GetView<HomeController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal:13.0,vertical:5.0),
+                  child: Header() ,
+                ),
                 const SizedBox(
                   height: 16,
                 ),
@@ -49,16 +56,24 @@ class HomeView extends GetView<HomeController> {
                 const SizedBox(
                   height: 16,
                 ),
+                Divider(
+                            color: Colors.grey,
+                            thickness: 1,
+                            
+                            ),
                 Post(
                   postModel: controller.postModel,
                   onPressed: controller.changeIconLike,
+                  onPs: controller.changeIconMark,
                 ),
                 const SizedBox(
                   height: 18,
                 ),
+                
               ],
             ),
           ),
+        bottomNavigationBar:BottomNavbar() ,
         ),
       );
     });

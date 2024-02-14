@@ -5,10 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 class Post extends StatelessWidget {
   final PostModel postModel;
   final void Function()? onPressed;
+  final void Function()? onPs;
   const Post({
     super.key,
     required this.postModel,
     this.onPressed,
+    this.onPs
   });
 
   @override
@@ -78,14 +80,28 @@ class Post extends StatelessWidget {
               onPressed: onPressed,
               icon: Icon(
                 postModel.isLike ? Icons.favorite : Icons.favorite_border,
+                size:24,
               ),
             ),
-            const Icon(
-              Icons.comment,
-            ),
-            const Icon(
-              Icons.share,
-            ),
+            Container(
+              width:24,
+              height:24,
+              child:Image.asset('assets/images/ig_comment.png') ),
+            SizedBox(width:24,),
+           Container(
+              width:24,
+              height:24,
+              child:Image.asset('assets/images/ig_share.png') ),
+            SizedBox(width:240),
+            IconButton(
+              onPressed:  onPs,
+              icon: postModel.isMark ? Container(
+              width: 24,
+              height: 24,
+              child: Image.asset('assets/images/ig_mark.png')) : Icon(Icons.bookmark),
+        ),
+        
+
           ],
         ),
         Padding(

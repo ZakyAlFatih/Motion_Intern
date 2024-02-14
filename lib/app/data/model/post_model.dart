@@ -4,6 +4,7 @@ class PostModel {
   bool isSponsor;
   String postingGambar;
   bool isLike;
+  bool isMark;
   int jumlahLike;
   String description;
   PostModel({
@@ -12,6 +13,7 @@ class PostModel {
     this.isSponsor = false,
     required this.postingGambar,
     this.isLike = false,
+    this.isMark=false,
     required this.jumlahLike,
     required this.description,
   });

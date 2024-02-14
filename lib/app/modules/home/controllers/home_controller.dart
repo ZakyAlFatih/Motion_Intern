@@ -9,7 +9,7 @@ import '../../../routes/app_pages.dart';
 class HomeController extends GetxController {
   final storyController = StoryController();
   PostModel postModel = PostModel(
-    namaAkun: 'Ruffles',
+    namaAkun: 'Joshua_Zaky',
     description:
         'Username Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
     fotoProfile: 'foto_profile',
@@ -17,6 +17,7 @@ class HomeController extends GetxController {
     isLike: false,
     postingGambar: 'foto_profile',
     isSponsor: true,
+    isMark: false,
   );
 
   List<StoryModel> storyModel = [];
@@ -30,7 +31,7 @@ class HomeController extends GetxController {
     storyModel = [
       StoryModel(
         image: 'foto_profile',
-        namaAkun: 'Ruffles',
+        namaAkun: 'Joshua_Zaky',
         storyItems: [
           StoryItem.text(
             title: "I guess you'd love to see more of our food. That's great.",
@@ -45,7 +46,7 @@ class HomeController extends GetxController {
       ),
       StoryModel(
         image: 'foto_profile',
-        namaAkun: 'Sabanok',
+        namaAkun: 'Bagas_Zaky',
         storyItems: [
           StoryItem.pageImage(
             url:
@@ -57,7 +58,7 @@ class HomeController extends GetxController {
       ),
       StoryModel(
         image: 'foto_profile',
-        namaAkun: 'Blue_Boy',
+        namaAkun: 'Dhika_Zaky',
         storyItems: [
           StoryItem.pageImage(
             url: "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif",
@@ -80,6 +81,11 @@ class HomeController extends GetxController {
     update();
   }
 
+void changeIconMark(){
+  postModel.isMark=!postModel.isMark;
+  update();
+}
+
   void toStoryPageView(
     List<StoryItem>? storyItems,
   ) {
@@ -87,4 +93,7 @@ class HomeController extends GetxController {
       'story': storyItems,
     });
   }
+
 }
+
+
